@@ -1,7 +1,7 @@
 from __future__ import print_function
 from sys import path
-path.append('/content/GFTE')
-path.append('/content/GFTE/GFTE-pos')
+path.append('/content/table-structure-recognition-usydnlp')
+path.append('/content/table-structure-recognition-usydnlp/position')
 import argparse
 import random
 import torch
