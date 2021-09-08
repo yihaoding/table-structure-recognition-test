@@ -1,6 +1,9 @@
 #from skimage.io import imread
 #from skimage.util import crop
 #from skimage.transform import rotate,resize,rescale
+from sys import path
+path.append('/content/table-structure-recognition-test')
+path.append('/content/table-structure-recognition-test/position_onehot_text')
 import random
 import cv2
 import numpy as np
@@ -179,7 +182,7 @@ class ScitsrDataset(Dataset):
         x8 = x4-x3    # 文本高度
         return [x1,x2,x3,x4,x5,x6,x7,x8]
         
-    def get(self, idx):
+    def __getitem__(self, idx):
         structs, chunks = self.readlabel(idx)
         cl = self.cal_chk_limits(chunks)
         #print(cl)
