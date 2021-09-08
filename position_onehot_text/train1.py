@@ -1,4 +1,7 @@
 from __future__ import print_function
+from sys import path
+path.append('/content/table-structure-recognition-test')
+path.append('/content/table-structure-recognition-test/position_onehot_text')
 import argparse
 import random
 import torch
@@ -57,9 +60,9 @@ torch.manual_seed(opt.manualSeed)
 #    print("WARNING: You have a CUDA device, so you should probably run with --cuda")
 
 
-root_path = ''
+root_path = '/content/scitsr2/SciTSR/train'
 train_dataset = ScitsrDataset(root_path)
-root_path = ''
+root_path = '/content/scitsr2/SciTSR/test'
 test_dataset = ScitsrDataset(root_path)
 print("samples:",len(train_dataset),len(test_dataset))
 train_loader = DataLoader(train_dataset, batch_size=32, shuffle=True)
