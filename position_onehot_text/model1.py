@@ -10,7 +10,6 @@ class TbNet(torch.nn.Module):
         self.conv2 = GCNConv(64, 64)
         self.embeds = nn.Embedding(vocab_size, num_text_features)
         self.rnn = nn.GRU(num_text_features, 64, bidirectional=False, batch_first=True)
-        #self.text_simple_lin = torch.nn.Linear(num_text_features*10, num_text_features) # 临时措施。应该用lstm
         self.lin1 = torch.nn.Linear(64*2, 64)
         self.lin_text = torch.nn.Linear(64*2, 64)
         self.lin_final = torch.nn.Linear(64, num_classes)
